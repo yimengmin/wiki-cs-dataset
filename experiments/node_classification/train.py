@@ -201,6 +201,8 @@ def mean_with_uncertainty(values, n_boot, conf_threshold):
 
 
 def train_and_eval(model_fn, data, args, result_callback=None):
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir) # create the output dir
     with open(os.path.join(args.output_dir, 'args.json'), 'w') as out:
         json.dump(vars(args), out)
     csvfile = open(os.path.join(args.output_dir, 'splits_results.csv'),
