@@ -7,7 +7,7 @@ import dgl.data
 import os.path
 from dgl import DGLGraph
 
-DATA_PATH = os.path.join('..', '..', 'dataset', 'data.json')
+DATA_PATH = os.path.join('..', 'dataset', 'data.json')
 
 class NodeClassificationDataset:
     def __init__(self, graph, features, labels, train_masks, stopping_masks,
